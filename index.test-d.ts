@@ -14,7 +14,7 @@ expectType<Array<string | boolean>>(
 	arrify(new Set<string | boolean>(['🦄', true]))
 );
 expectType<number[]>(arrify(new Set([1, 2])));
-expectError(arrify(['🦄'] as const).push(''));
+expectError(arrify(['🦄'] as const));
 expectType<[number, number] | []>(arrify(false ? [1, 2] : null));
 expectType<[number, number] | []>(arrify(false ? [1, 2] : undefined));
 expectType<[number, number] | [string]>(arrify(false ? [1, 2] : '🦄'));

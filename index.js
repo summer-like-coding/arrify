@@ -1,4 +1,5 @@
 export default function arrify(value) {
+	console.log("看一下是否可迭代",typeof value[Symbol.iterator]);
 	if (value === null || value === undefined) {
 		return [];
 	}
@@ -17,3 +18,7 @@ export default function arrify(value) {
 
 	return [value];
 }
+
+console.log(arrify(false ? [1, 2] : {}));
+console.log(arrify('🦄'));
+console.log(arrify({ name: 'summer' }));
